@@ -1,0 +1,55 @@
+<view class="wrap">
+    <view class="user">
+        <view class="avatar-box">
+            <image class="avatar" src="{{user$.avatarUrl}}"></image>
+        </view>
+        <view class="center-box">
+            <view class="top">
+                <view class="name">
+                    <text>{{user$.Name || user$.nickName}}</text>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="prompt" wx:if="{{user$.Level === 'city'}}"><text>城市级</text></view>
+                <view class="prompt" wx:elif="{{user$.Level === 'region'}}"><text>大区管理员</text></view>
+                <view class="prompt" wx:elif="{{user$.Level === 'root'}}"><text>大区级</text></view>
+                <view class="bar" wx:if="{{user$.Level === 'city'}}"></view>
+                <view class="prompt" wx:if="{{user$.Level === 'city'}}"><text>{{user$.CityName}}</text></view>
+                <view class="bar" wx:if="{{user$.Level === 'root'}}"></view>
+                <view class="prompt" wx:if="{{user$.Level === 'root'}}"><text>{{user$.AreaName}}</text></view>
+                <view class="bar"></view>
+                <view class="prompt"><text>{{user$.Mobile}}</text></view>
+            </view>
+        </view>
+        <view class="number">
+            <view class="number-item"
+                  wx:for="{{usPlanData}}"
+                  wx:key="index">
+                <view class="value">
+                    <text>{{item.value}}</text>
+                </view>
+                <view class="label">
+                    <text>{{item.label}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="notice">
+        <image class="icon" src="../../assets/images/notice.png"></image>
+        <swiper
+            interval="{{interval}}"
+            autoplay="{{autoPlay}}"
+            vertical="{{vertical}}"
+            circular="{{circular}}"
+            class="content">
+            <swiper-item
+                class="item"
+                wx:for="{{noticeData}}"
+                wx:key="index">
+                <view bindtap="handleNotice" data-item="{{item}}">
+                    <text>{{item.Title}}</text>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

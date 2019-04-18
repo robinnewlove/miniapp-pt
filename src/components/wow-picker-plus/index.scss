@@ -1,0 +1,48 @@
+@import '../../assets/scss/define';
+.wrap{
+    @extend %pf;
+    @extend %l0;
+    @extend %t0;
+    @extend %b0;
+    @extend %r0;
+    @extend %w100;
+    @extend %h100;
+    background-color: rgba(0,0,0,.1);
+    z-index: 9;
+}
+.inner{
+    @extend %w100;
+    @extend %pa;
+    @extend %l0;
+    @extend %b0;
+    @extend %df;
+    @extend %fdc;
+    height: j(300);
+    background-color: #fff;
+}
+.head {
+    @extend %df;
+    @extend %aic;
+    @extend %jcs;
+    padding: 0 j(32);
+    height: j(100);
+    border-bottom: j(1) solid #ddd;
+}
+.btn{
+    font-size: f(36);
+    color: #333;
+    &:last-child{
+        color: #2FB42E
+    }
+}
+.content{
+    @extend %df1;
+}
+.item{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    height: j(100);
+    font-size: f(32);
+}
+

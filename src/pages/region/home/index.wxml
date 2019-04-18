@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="wrap">
+    <!--头部-->
+    <view class="head">
+        <!--logo-->
+        <panel-logo></panel-logo>
+        <!--/logo-->
+        <!--用户信息-->
+        <panel-user
+            class="right"
+            userCurrent="{{currentLevel}}"
+        ></panel-user>
+        <!--/用户信息-->
+    </view>
+    <!--/头部-->
+    <!--主体-->
+    <view class="main">
+        <!--导航-->
+        <panel-menu
+            bindmenu="handleMenu"
+            menuCurrent="{{currentLevel}}"
+        ></panel-menu>
+        <!--/导航-->
+        <!--内容-->
+        <panel-region
+            class="content"
+        ></panel-region>
+        <!--/内容-->
+    </view>
+    <!--/主体-->
+</view>

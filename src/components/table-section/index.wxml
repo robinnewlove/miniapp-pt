@@ -1,0 +1,66 @@
+
+<view class="table store-table">
+
+    <wxs src="../../wxs/filter.wxs" module="filter" />
+
+    <view class="thead">
+        <view class="tr">
+            <view class="td"
+                  wx:for="{{tableHeadData}}"
+                  wx:for-index="key"
+                  wx:key="{{key}}">
+                <text>{{item.text}}</text>
+            </view>
+        </view>
+    </view>
+
+    <scroll-view class="tbody" scroll-y>
+        <view class="tr"
+              wx:for="{{tableData}}"
+              wx:key="{{item}}">
+            <view class="td"
+                  wx:for="{{tableHeadData}}"
+                  wx:for-index="key"
+                  wx:for-item="head"
+                  wx:key="{{key}}">
+                <view class="table-button-group" wx:if="{{head.mold === 'HANDLE'}}">
+                    <view
+                        class="table-button table-button-{{butKey}} table-button-{{butKey}}{{item.PlanNum?'':'-disabled'}}"
+                        bindtap="handleJump"
+                        data-item="{{item}}"
+                        data-type="{{butKey}}"
+                        data-index="{{index}}"
+                        wx:for="{{head.buttons}}"
+                        wx:for-item="butItem"
+                        wx:for-index="butKey"
+                        wx:key="butKey"
+                        wx:if="{{filter.filterStoreButtonShow(item, user$, butKey)}}">
+                        <text>{{butItem.label}}</text>
+                    </view>
+                </view>
+
+                <view class="table-status-group" wx:elif="{{head.mold === 'status'}}">
+                    <view class="table-status table-status{{item.StoreStatus}}">
+                        <image class="table-status-icon" wx:if="{{item.StoreStatus === 1}}" src="../../assets/images/via-before.png"></image>
+                        <image class="table-status-icon" wx:elif="{{item.StoreStatus === 2}}" src="../../assets/images/via.png"></image>
+                        <image class="table-status-icon" wx:elif="{{item.StoreStatus === 3}}" src="../../assets/images/no-via.png"></image>
+                        <text>{{item.StoreStatus === 1 ? '待审核' : item.StoreStatus === 2 ? '已通过' : '未通过' }}</text>
+                    </view>
+                </view>
+                <view
+                    class="table-switch {{item[key] && 'active'}}"
+                    bindtap="handleSwitch"
+                    data-item="{{item}}"
+                    data-type="{{key}}"
+                    data-index="{{index}}"
+                    wx:elif="{{head.mold === 'switch'}}">
+                    <view class="table-switch-inner"></view>
+                </view>
+                <text wx:elif="{{key === 'LastPlanTime'}}">{{filter.filterLastPlanTime(item[key])}}</text>
+                <text wx:elif="{{key === 'PlanNum'}}">{{filter.filterLastPlanNum(item[key])}}</text>
+                <text wx:elif="{{key === 'Quarter'}}">Q{{item[key]}}</text>
+                <text wx:else>{{item[key] || '---'}}{{head.unit}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<view class="wrap">
+
+    <wxs src="../../wxs/filter.wxs" module="filter" />
+
+    <options-section
+        bindselect="handleSelectChange"
+        bindinput="handleInput"
+        bindclear="handleInputClear"
+        binddown="handleDown"
+        binddate="handleDate"
+        bindreset="handleReset"
+        bindconfirm="handleConfirm"
+        bindlinkage="handleLinkageSure"
+        optionsData="{{optionsData}}"
+        linkageNoUse="{{linkageNoUse}}"
+    ></options-section>
+    <!--<view class="null-box">-->
+        <!--<view class="null-icon" style="background-image: url(../../assets/images/icon.png)"></view>-->
+        <!--<text>无搜索结果</text>-->
+    <!--</view>-->
+    <view class="main">
+        <scroll-view
+            class="table region"
+            scroll-y>
+            <view class="tr"
+                  wx:for="{{storeData}}"
+                  wx:key="{{index}}">
+                <view class="td">
+                    <view class="value name">
+                        <text>{{item.StoreName}}</text>
+                    </view>
+                    <view class="label">
+                        <text>{{item.CityName}}</text>
+                        <view class="bar"></view>
+                        <text>{{item.StoreBrandName}}</text>
+                    </view>
+                </view>
+                <view class="td">
+                    <view class="value">
+                        <text>{{filter.filterLastPlanTime(item.LastPlanTime)}}</text>
+                    </view>
+                    <view class="label">
+                        <text>上次巡店</text>
+                    </view>
+                </view>
+                <view class="td">
+                    <view class="value">
+                        <text>{{item.PatrolName}}</text>
+                    </view>
+                    <view class="label">
+                        <text>巡店员</text>
+                    </view>
+                </view>
+                <view class="td">
+                    <view class="status status{{item.Status}}">
+                        <image class="status-icon" wx:if="{{item.Status === 1}}" src="../../assets/images/via-before.png"></image>
+                        <image class="status-icon" wx:elif="{{item.Status === 2 || item.Status === 0}}" src="../../assets/images/via.png"></image>
+                        <image class="status-icon" wx:elif="{{item.Status === 3}}" src="../../assets/images/no-via.png"></image>
+                        <text>{{item.Status === 1 ? '待审核' : (item.Status === 2 || item.Status === 0) ? '已通过' : '未通过' }}</text>
+                    </view>
+                </view>
+                <view class="td">
+                    <view
+                        bindtap="handlePatrolJump"
+                        data-item="{{item}}"
+                        class="button status{{item.Status}}">
+                        <text>{{item.Status === 1 ? '审核' : '已审核'}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

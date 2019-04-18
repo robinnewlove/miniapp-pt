@@ -1,0 +1,57 @@
+@import '../../assets/scss/define';
+
+page{
+    @extend %h100;
+    background-color: #fff;
+}
+.wrap{
+    @extend %df;
+    @extend %fdc;
+    @extend %oh;
+    padding: 0 j(150);
+}
+.title{
+    margin-top: j(110);
+    font-size: f(50);
+    color: #333;
+}
+.select{
+    margin-top: j(90);
+}
+.select-item{
+    @extend %df;
+    @extend %pr;
+    @extend %aic;
+    height: j(200);
+    box-shadow: 0 0 j(10) j(10) rgba(0,0,0,.02);
+    font-size: f(40);
+    color: #333;
+    padding: 0 j(70);
+    margin-bottom: j(50);
+    border: 1px solid #e6e7e6;
+    &:after{
+        content: '';
+        @extend %pa;
+        @extend %t50;
+        @include tfr(45deg);
+        margin-top: j(-10);
+        right: j(50);
+        width: j(20);
+        height: j(20);
+        background-color: #fff;
+        border-right-color: #a3a5a8;
+        border-top-color: #a3a5a8;
+        border-top-width: j(6);
+        border-top-style: solid;
+        border-right-width:j(6);
+        border-right-style: solid;
+    }
+    &:active{
+        background-color: #f2f2f2;
+    }
+}
+.icon{
+    width: j(90);
+    height: j(90);
+    margin-right: j(70);
+}

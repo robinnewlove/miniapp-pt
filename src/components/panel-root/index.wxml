@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="wrap">
+    <options-section
+        bindselect="handleSelectChange"
+        bindinput="handleInput"
+        bindclear="handleInputClear"
+        binddown="handleDown"
+        binddate="handleDate"
+        bindreset="handleReset"
+        bindconfirm="handleConfirm"
+        optionsData="{{optionsData}}"
+    ></options-section>
+    <view class="section">
+        <view class="data-box">
+            <view class="data">
+                <view class="title">
+                    <text>门店数据统计</text>
+                    <text class="sub-title">共{{totalStoreNum}}家</text>
+                </view>
+                <view class="chart">
+                    <ff-canvas id="bar-dom" canvas-id="bar" opts="{{ barOpts }}"></ff-canvas>
+                </view>
+                <view class="more-link"
+                      data-type="store"
+                      bindtap="handleJumpChart">
+                    <text>查看更多</text>
+                    <view class="arrow"></view>
+                </view>
+            </view>
+            <view class="data">
+                <view class="title">
+                    <text>柜台米数统计</text>
+                    <text class="sub-title">共{{totalCounterNum}}米</text>
+                </view>
+                <view class="chart">
+                    <ff-canvas id="ring-dom" canvas-id="ring" opts="{{ ringOpts }}"></ff-canvas>
+                    <!--<slot name="ring"></slot>-->
+                </view>
+                <view class="more-link"
+                      data-type="counter"
+                      bindtap="handleJumpChart">
+                    <text>查看更多</text>
+                    <view class="arrow"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="section table">
+        <scroll-view class="scroll" scroll-y>
+            <view class="tr">
+                <view class="td"
+                      wx:for="{{tableHeadData}}"
+                      wx:for-index="key"
+                      wx:key="{{key}}">
+                    <text>{{item.text}}</text>
+                </view>
+            </view>
+            <view class="tr"
+                  wx:for="{{tableData}}"
+                  wx:key="{{item}}">
+                <view class="td"
+                      wx:for="{{tableHeadData}}"
+                      wx:for-index="key"
+                      wx:for-item="head"
+                      wx:key="{{key}}">
+                    <text>{{item[key]}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,82 @@
+@import '../../assets/scss/define';
+.menu{
+    width: j(420);
+    margin-right: j(80);
+}
+.menu-inner{
+    @extend %df;
+    @extend %fww;
+    margin-right: j(-20);
+}
+.menu-item{
+    @extend %df;
+    @extend %aic;
+    @extend %fdc;
+    @extend %jcc;
+    width: j(200);
+    height: j(200);
+    background-color: #fff;
+    margin: 0 j(20) j(20) 0;
+    box-shadow: 0 j(10) j(10) j(2) rgba(0,0,0,.05);
+}
+.menu-item:active{
+    background-color: #f2f2f2;
+}
+.menu-icon{
+    @extend %bg;
+    width: j(65);
+    height: j(65);
+    &.mdgl{
+        background-position: 0 j(-130);
+    }
+    &.xjmd{
+        background-position: 0 0;
+    }
+    &.xzxdb{
+        background-position: 0 j(-65);
+    }
+    &.xzjdbg{
+        background-position: j(-65) 0;
+    }
+    &.fbxx{
+        background-position: j(-130) j(-65);
+    }
+    &.ckxdy{
+        background-position: j(-130) j(-130);
+    }
+    &.ckxdsj{
+        background-position: j(-65) j(-65);
+    }
+    &.ckmdsj{
+        background-position: j(-130) 0;
+    }
+    &.ckjdbg{
+        background-position: j(-65) j(-130);
+    }
+}
+.menu-text{
+    margin-top: j(30);
+    font-size: f(24);
+    color: #7d8a9b;
+}
+.menu-switch{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %w100;
+    height: j(100);
+    background-color: #fff;
+    box-shadow: 0 j(10) j(10) j(2) rgba(0,0,0,.05);
+}
+.menu-switch:active{
+    background-color: #f2f2f2;
+}
+.menu-switch-icon{
+    width: j(46);
+    height: j(46);
+    margin-right: j(40);
+    background-position: j(-313) 0;
+}
+.menu-switch-text{
+    margin-top: 0;
+}

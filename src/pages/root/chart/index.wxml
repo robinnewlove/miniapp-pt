@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="wrap list-page">
+    <options-section
+        bindselect="handleSelectChange"
+        bindinput="handleInput"
+        bindclear="handleInputClear"
+        binddown="handleDown"
+        binddate="handleDate"
+        bindreset="handleReset"
+        bindpop="handlePop"
+        bindconfirm="handleConfirm"
+        bindlinkage="handleLinkageSure"
+        optionsData="{{optionsData}}"
+        linkageNoUse="{{linkageNoUse}}"
+    ></options-section>
+    <view class="main">
+        <scroll-view class="inner" scroll-y>
+            <view class="section" wx:if="{{params$.type === 'counter'}}">
+                <view class="title">城市柜台米数统计趋势图</view>
+                <view class="chart">
+                    <ff-canvas id="counter-dom" canvas-id="line" opts="{{ counterOpts }}"></ff-canvas>
+                </view>
+            </view>
+            <view class="section" wx:if="{{params$.type === 'store'}}">
+                <view class="title">城市门店数量趋势图</view>
+                <view class="chart">
+                    <ff-canvas id="store-dom" canvas-id="line" opts="{{ storeOpts }}"></ff-canvas>
+                </view>
+            </view>
+            <view class="section" wx:if="{{params$.type === 'store'}}">
+                <view class="title">城市巡店数量趋势图</view>
+                <view class="chart" hidden="{{!hidePop}}">
+                    <ff-canvas id="patrol-dom" canvas-id="line" opts="{{ patrolOpts }}"></ff-canvas>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

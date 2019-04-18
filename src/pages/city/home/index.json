@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "panel-logo": "../../../components/panel-logo/index",
+        "panel-city": "../../../components/panel-city/index",
+        "panel-menu": "../../../components/panel-menu/index",
+        "panel-user": "../../../components/panel-user/index"
+    }
+}

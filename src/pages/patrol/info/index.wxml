@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="wrap">
+    <view class="cause" wx:if="{{AuditContent}}">
+        <text>审核失败：{{AuditContent}}</text>
+    </view>
+    <scroll-view class="scroll" scroll-y>
+        <form-section
+            bindselect="handleSelectChange"
+            bindinput="handleInput"
+            bindlabel="handleLabel"
+            bindcheck="handleCheck"
+            bindupload="handleUpload"
+            bindlocation="handleLocation"
+            bindlinkage="handleLinkageSure"
+            params="{{params$}}"
+            formData="{{formData}}"
+        ></form-section>
+    </scroll-view>
+    <view class="footer" wx:if="{{params$.type !== 'see'}}">
+        <view class="button cancel"
+              wx:if="{{params$.type === 'examine'}}"
+              data-status="3"
+              bindtap="handleExamine">
+            <text>审核不通过</text>
+        </view>
+        <view class="button"
+              wx:if="{{params$.type === 'examine'}}"
+              data-status="2"
+              bindtap="handleExamine">
+            <text>审核通过</text>
+        </view>
+        <view class="button"
+              wx:if="{{!params$.type || params$.type === 'update' || params$.type === 'add'}}"
+              bindtap="handleSubmit">
+            <text>提交审核</text>
+        </view>
+    </view>
+</view>

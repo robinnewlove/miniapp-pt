@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="wrap">
+    <scroll-view class="scroll" scroll-y>
+        <form-section
+            bindselect="handleSelectChange"
+            bindinput="handleInput"
+            bindcheck="handleCheck"
+            bindupload="handleUpload"
+            bindlinkage="handleLinkageSure"
+            formData="{{formData}}"
+        ></form-section>
+    </scroll-view>
+    <view class="footer">
+        <view class="button" bindtap="handleSubmit">
+            <text>确认发布</text>
+        </view>
+    </view>
+</view>

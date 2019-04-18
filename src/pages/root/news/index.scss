@@ -1,0 +1,58 @@
+@import '../../../assets/scss/define';
+
+page{
+    @extend %h100;
+    background-color: #fff;
+}
+.wrap{
+    @extend %df;
+    @extend %fdc;
+    @extend %aic;
+    @extend %oh;
+    @extend %h100;
+}
+
+.scroll{
+    @extend %df1;
+    @extend %oh;
+    @extend %w100;
+    @extend %h100;
+    @extend %bsb;
+}
+
+.footer{
+    @extend %df;
+    @extend %w100;
+    @extend %bsb;
+    @extend %aic;
+    justify-content: flex-end;
+    height: j(120);
+    background-color: #fff;
+    padding: 0 j(80);
+    border-top: j(1) solid #ddd;
+}
+.button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %bsb;
+    width: j(360);
+    height: j(80);
+    color: #fff;
+    font-size: f(36);
+    border-radius: j(8);
+    background-color: #11b4e6;
+    margin-right: j(40);
+    &.cancel{
+        background-color: #fff;
+        border: j(1) solid #11b4e6;
+        color: #11b4e6;
+        &:active{
+            background-color: #f2f2f2;
+        }
+    }
+    &:active{
+        background-color: #1aa2e6;
+    }
+}
+

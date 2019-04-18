@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "options-section": "./../options-section/index",
+        "table-section": "./../table-section/index"
+    }
+}

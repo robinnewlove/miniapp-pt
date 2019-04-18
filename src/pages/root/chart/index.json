@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "options-section": "../../../components/options-section/index",
+        "ff-canvas": "../../../components/f2-canvas/index"
+    }
+
+}

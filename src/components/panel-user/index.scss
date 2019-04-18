@@ -1,0 +1,109 @@
+@import '../../assets/scss/define';
+.user{
+    @extend %df;
+    @extend %aic;
+    height: j(120);
+}
+.avatar-box{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    width: j(120);
+    height: j(120);
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: j(26);
+}
+.avatar{
+    width: j(110);
+    height: j(110);
+    border-radius: 50%;
+    background-color: #f2f2f2;
+}
+.center-box{
+    @extend %df1;
+}
+.top{
+    @extend %df;
+    @extend %aic;
+}
+.name{
+    font-size: f(38);
+    color: #fff;
+    line-height: j(48);
+}
+.bottom{
+    @extend %df;
+    @extend %aic;
+    margin-top: j(20);
+}
+.prompt{
+    font-size: f(22);
+    color: #fff;
+}
+.bar{
+    width: 1px;
+    height: j(18);
+    margin: 0 j(16);
+    background-color: #59cef0;
+}
+.number{
+    @extend %df;
+    @extend %aic;
+}
+.number-item{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %fdc;
+    padding: 0 j(30);
+    border-right: 1px solid #59cef0;
+    &:last-child{
+        border-right: none;
+    }
+}
+.value{
+    font-size: f(38);
+    color: #fff;
+}
+.label{
+    margin-top: j(20);
+    font-size: f(22);
+    color: #ace7f8;
+}
+
+
+.notice{
+    @extend %df;
+    @extend %aic;
+    @extend %pr;
+    height: j(80);
+    margin-top: j(50);
+    background-color: #0fa6d2;
+    padding: 0 j(50);
+}
+.icon{
+    @extend %bg;
+    width: j(40);
+    height: j(36);
+    margin-right: j(40);
+    background-position: j(-260) 0;
+}
+.content{
+    @extend %pa;
+    @extend %oh;
+    right: j(50);
+    left: j(130);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: f(26);
+    color: #fff;
+    height: j(80);
+    line-height: j(80);
+}
+.item{
+    @extend %w100;
+    @extend %oh;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

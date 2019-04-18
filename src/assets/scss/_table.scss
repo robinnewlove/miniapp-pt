@@ -1,0 +1,110 @@
+@import "./define";
+.wrap{
+    @extend %h100;
+    @extend %df;
+    @extend %fdc;
+    background-color: #fff;
+}
+.main{
+    @extend %df1;
+    @extend %df;
+    background-color: #fff;
+}
+
+.table{
+    @extend %df1;
+    @extend %oh;
+    .tr{
+        @extend %df;
+        @extend %aic;
+        padding: j(32) 0;
+        margin: 0 j(40);
+        border-bottom: j(1) solid #e4e4e4;
+    }
+    .td{
+        @extend %df1;
+        @extend %oh;
+        @extend %fww;
+        font-size: f(26);
+        text{
+            word-break: keep-all;
+            word-wrap: break-word;
+        }
+    }
+}
+.value{
+    font-size: f(26);
+    color: #333;
+    &.name{
+        font-size: f(32);
+    }
+}
+.label{
+    @extend %df;
+    @extend %aic;
+    margin-top: j(30);
+    font-size: f(22);
+    color: #b8b8b8;
+}
+.bar{
+    width: 1px;
+    height: j(18);
+    margin: 0 j(20);
+    background-color: #ddd;
+}
+.status{
+    @extend %df;
+    @extend %aic;
+    font-size: f(26);
+    color: #666;
+    &.table-status1{
+        color: #666;
+    }
+    &.table-status2{
+        color: #ddd;
+    }
+    &.table-status3{
+        color: #fbaf64;
+    }
+}
+.status-icon{
+    @extend %bg;
+    width: j(28);
+    height: j(28);
+    margin-right: j(20);
+}
+.button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %bsb;
+    width: j(180);
+    height: j(65);
+    font-size: f(26);
+    color: #fff;
+    &.status1{
+        background-color: #ddd;
+    }
+    &.status0,
+    &.status2{
+        background-color: #11b4e6;
+    }
+    &.status3{
+        background-color: #fbaf64;
+    }
+}
+
+.region{
+    .button{
+        &.status0,
+        &.status1{
+            background-color: #11b4e6;
+        }
+        &.status2,
+        &.status3{
+            border: j(1) solid #999;
+            color: #999;
+            background-color: #fff;
+        }
+    }
+}

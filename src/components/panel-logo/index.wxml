@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="logo">
+    <!--<view class="logo-icon" style="background-image: url(../../assets/images/icon.png)"></view>-->
+    <image class="logo-icon" src="../../assets/images/logo.png" width="200"></image>
+    <view class="title">
+        <text>铂金行业中心微管理</text>
+    </view>
+</view>

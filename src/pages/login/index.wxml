@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="wrap">
+
+    <view class="inner" hidden="{{isLoading}}">
+        <image class="logo" src="../../assets/images/login-logo.png"></image>
+        <view class="title">
+            <text>铂金行业中心微管理</text>
+        </view>
+        <view class="form">
+            <view class="input-box"
+                  wx:if="{{useAuthorize}}"
+                  wx:for="{{formData}}"
+                  wx:key="{{index}}">
+                <input
+                    type="{{item.type}}"
+                    value="{{item.value}}"
+                    bindinput="bindInput"
+                    data-item="{{item}}"
+                    placeholder="{{item.placeholder}}"
+                />
+            </view>
+            <button
+                class="button"
+                wx:if="{{useGrantAuth === true}}"
+                open-type="getUserInfo"
+                bindgetuserinfo="handleUserInfo">
+                <text>一键授权</text>
+            </button>
+            <button
+                class="button"
+                wx:if="{{useGrantAuth === false}}"
+                bindtap="handleSubmit">
+                <text>登录</text>
+            </button>
+        </view>
+        <view class="prompt"
+              wx:if="{{useAuthorize}}">
+            <text>如忘记密码请与行业中心工作人员联系</text>
+        </view>
+    </view>
+    <loading hidden="{{!isLoading}}">加载中</loading>
+</view>

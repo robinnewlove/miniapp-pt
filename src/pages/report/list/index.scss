@@ -1,0 +1,6 @@
+@import '../../../assets/scss/define';
+
+page{
+    @extend %h100;
+    background-color: #eff4fa;
+}

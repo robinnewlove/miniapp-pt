@@ -1,0 +1,18 @@
+@import '../../assets/scss/define';
+.logo{
+    width: j(420);
+    padding-top: j(40);
+    margin-right: j(80);
+}
+.logo-icon{
+    @extend %bg;
+    width: j(142);
+    height: j(160);
+    background-position: 0 j(-202);
+}
+.title{
+    margin-top: j(40);
+    line-height: j(50);
+    font-size: f(40);
+    color: #fff;
+}

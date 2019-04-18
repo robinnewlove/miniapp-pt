@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "补充原因",
+    "usingComponents": {
+        "form-section": "../../components/form-section/index"
+    }
+}

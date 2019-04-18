@@ -1,0 +1,30 @@
+@import '../../../assets/scss/define';
+
+page{
+    @extend %h100;
+    background-color: #eff4fa;
+}
+
+.inner{
+    @extend %h100;
+}
+.main{
+    @extend %oh;
+    background-color: transparent !important;
+}
+.section{
+    background-color: #fff;
+    margin-bottom: j(30);
+}
+.title{
+    @extend %df;
+    @extend %aic;
+    padding: j(50);
+    color: #333;
+    height: j(60);
+    font-size: f(40);
+}
+.chart{
+    @extend %w100;
+    height: j(600);
+}

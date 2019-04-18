@@ -1,0 +1,94 @@
+@import '../../assets/scss/define';
+
+.options-wrap{
+    @extend %df;
+    @extend %aic;
+    @extend %bsb;
+    @extend %w100;
+    @extend %oh;
+    height: j(100);
+    padding: 0 j(80);
+    background-color: #fff;
+    border-bottom: j(1) solid #ddd;
+}
+.option{
+    @extend %df;
+    @extend %aic;
+    @extend %h100;
+    margin-right: j(80);
+    &:last-child{
+        margin-right: 0;
+    }
+}
+.option-content{
+    @extend %df;
+    @extend %aic;
+    height: j(100);
+    &.last-child{
+        .option-to{
+            @extend %dn;
+        }
+    }
+}
+.option-text{
+    margin-right: j(20);
+    font-size: f(26);
+    color: #333;
+}
+.option-to{
+    color: #333;
+    font-size: f(26);
+    margin: 0 j(20);
+}
+.arrow-icon{
+    @extend %bg;
+    width: j(16);
+    height: j(10);
+    background-position: j(-260) j(-65);
+}
+.search-box{
+    @extend %df;
+    @extend %aic;
+    width: j(440);
+    height: j(65);
+    background-color: #f8f8fb;
+    border-radius: j(33);
+    padding: 0 j(20);
+}
+.search-icon{
+    @extend %bg;
+    width: j(35);
+    height: j(35);
+    background-position: j(-195) j(-202);
+}
+.search-input{
+    @extend %df1;
+    height: j(35);
+    font-size: f(26);
+    color: #333;
+    min-height: j(35);
+    margin: 0 j(20);
+}
+.close-icon{
+    @extend %bg;
+    width: j(35);
+    height: j(35);
+    background-position: j(-358) j(-230);
+}
+.down-box{
+    @extend %df1;
+    justify-content: flex-end;
+    .option-text{
+        color: #11b9ea;
+    }
+}
+.down-icon{
+    width: j(30);
+    height: j(30);
+    margin-right: j(20);
+}
+
+.reset{
+    font-size: f(26);
+    color: #11b9ea;
+}

@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="menu">
+    <view class="menu-inner">
+        <view class="menu-item"
+              bindtap="handleMenu"
+              data-item="{{item}}"
+              wx:for="{{menu$[menuCurrent]}}"
+              wx:key="{{index}}"
+              wx:for-index="index"
+              wx:for-item="item">
+            <image class="menu-icon mdgl" wx:if="{{item.icon === 'mdgl'}}" src="../../assets/images/mdgl.png"></image>
+            <image class="menu-icon xjmd" wx:if="{{item.icon === 'xjmd'}}" src="../../assets/images/xjmd.png"></image>
+            <image class="menu-icon xzjdbg" wx:if="{{item.icon === 'xzjdbg'}}" src="../../assets/images/xzjdbg.png"></image>
+            <image class="menu-icon fbxx" wx:if="{{item.icon === 'fbxx'}}" src="../../assets/images/fbxx.png"></image>
+            <image class="menu-icon xzxdb" wx:if="{{item.icon === 'xzxdb'}}" src="../../assets/images/xzxdb.png"></image>
+            <image class="menu-icon ckxdy" wx:if="{{item.icon === 'ckxdy'}}" src="../../assets/images/ckxdy.png"></image>
+            <image class="menu-icon ckxdsj" wx:if="{{item.icon === 'ckxdsj'}}" src="../../assets/images/ckxdsj.png"></image>
+            <image class="menu-icon ckmdsj" wx:if="{{item.icon === 'ckmdsj'}}" src="../../assets/images/ckmdsj.png"></image>
+            <image class="menu-icon ckjdbg" wx:if="{{item.icon === 'ckjdbg'}}" src="../../assets/images/ckjdbg.png"></image>
+            <view class="menu-text">
+                <text>{{item.text}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="menu-switch"
+          bindtap="handleSwitch"
+          wx:if="{{menuCurrent !== 'root' && userList.length > 1 }}">
+        <image class="menu-icon menu-switch-icon" src="../../assets/images/refresh.png"></image>
+        <view class="menu-text menu-switch-text">
+            <text>{{ menuCurrent === 'region' ? '切换至城市级巡店页' : '切换至大区级管理页'}}</text>
+        </view>
+    </view>
+</view>

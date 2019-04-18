@@ -1,0 +1,120 @@
+@import '../../assets/scss/define';
+
+.container {
+    @extend %h100;
+    width: 80%;
+}
+.wrap{
+    @extend %h100;
+    @extend %df;
+    @extend %fdc;
+}
+.section{
+    background-color: #fff;
+}
+.menu{
+    @extend %df;
+    @extend %aic;
+    @extend %bsb;
+    background-color: #fff;
+    height: j(100);
+    padding: 0 j(50);
+    border-bottom: 1px solid #e4e4e4;
+}
+.date-box{
+    @extend %df;
+    @extend %aic;
+}
+.date{
+    @extend %df;
+    @extend %aic;
+    height: j(100);
+}
+.date-text{
+    color: #333;
+    font-size: f(26);
+    margin-right: j(20);
+}
+.icon{
+    @extend %bg;
+    width: j(16);
+    height: j(10);
+    background-position: j(-260) j(-65);
+}
+.date-to{
+    color: #333;
+    font-size: f(26);
+    margin: 0 j(20);
+}
+.data-box{
+    @extend %df;
+    padding: 0 j(50);
+    height: j(550);
+}
+.data{
+    @extend %df1;
+    padding-top: j(45);
+}
+.title{
+    font-size: f(34);
+    color: #333;
+}
+.sub-title{
+    margin-left: j(20);
+    font-size: f(26);
+    color: #999;
+}
+.chart{
+    @extend %w100;
+    height: j(380);
+}
+.more-link{
+    @extend %df;
+    @extend %aic;
+    margin-top: j(20);
+    font-size: f(26);
+    color: #999;
+}
+.arrow{
+    @include tfr(45deg);
+    width: j(16);
+    height: j(16);
+    margin-left: j(20);
+    background-color: #fff;
+    border-right-color: #c7c7cc;
+    border-top-color: #c7c7cc;
+    border-top-width: j(6);
+    border-top-style: solid;
+    border-right-width:j(6);
+    border-right-style: solid;
+}
+.table{
+    @extend %df1;
+    @extend %oh;
+    margin-top: j(20);
+    .scroll{
+        @extend %h100;
+    }
+}
+.tr{
+    @extend %df;
+    @extend %aic;
+    padding: 0 j(50);
+    &:nth-child(even){
+        background-color: #fff;
+    }
+    &:nth-child(even){
+        background-color: #f8f8fb;
+        .td{
+            color: #333;
+        }
+    }
+}
+.td{
+    @extend %df;
+    @extend %df1;
+    @extend %aic;
+    height: j(100);
+    font-size: f(22);
+    color: #999;
+}

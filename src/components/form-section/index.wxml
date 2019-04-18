@@ -1,0 +1,186 @@
+<!--index.wxml-->
+<view class="form">
+
+    <wxs src="../../wxs/filter.wxs" module="filter" />
+
+    <view class="form-section {{item.class}}"
+          wx:for="{{formData}}"
+          wx:for-index="key"
+          wx:for-item="item"
+          wx:key="{{key}}">
+
+        <view
+            class="label {{item.status === false && 'clickable'}}"
+            data-item="{{item}}"
+            bindtap="handleLabel">
+            <text>{{item.label}}</text>
+            <text class="color" wx:if="{{item.nonempty}}">*</text>
+        </view>
+
+        <picker
+            wx:if="{{item.mold === 'select'}}"
+            bindchange="handleSelectChange"
+            data-item="{{item}}"
+            disabled="{{(params.disabled || item.disabled)}}"
+            range="{{item.options}}"
+            range-key="{{item.rangeKey}}">
+            <view class="input-box select {{(params.disabled || item.disabled) && 'disabled'}}">
+                <text class="input">{{item.value || item.placeholder}}</text>
+            </view>
+        </picker>
+
+        <view
+            wx:if="{{item.mold === 'linkage'}}"
+            bindtap="handleLinkage"
+            data-disabled="{{(params.disabled || item.disabled)}}"
+            class="input-box select {{(params.disabled || item.disabled) && 'disabled'}}">
+            <text class="input">{{item.value || item.placeholder}}</text>
+        </view>
+
+        <view class="input-box address {{(params.disabled || item.disabled) && 'disabled'}}"
+              bindtap="handleLocation"
+              data-item="{{item}}"
+              wx:if="{{item.mold === 'address'}}">
+            <image class="address-icon" src="../../assets/images/address-icon.png"></image>
+            <text class="input">{{item.value || item.placeholder}}</text>
+        </view>
+
+        <view class="ul" wx:if="{{item.mold === 'inputGroup'}}">
+            <view class="li"
+                  wx:for="{{item.children}}"
+                  wx:for-index="inputKey"
+                  wx:for-item="inputItem"
+                  wx:key="{{inputKey}}">
+                <view class="label">
+                    <text>{{inputItem.label}}</text>
+                </view>
+                <view class="input {{(params.disabled || item.disabled) && 'disabled'}}">
+                    <input
+                        bindinput="handleInput"
+                        data-item="{{inputItem}}"
+                        value="{{inputItem.value}}"
+                        disabled="{{(params.disabled || item.disabled)}}"
+                        type="{{inputItem.type || 'text'}}"
+                        placeholder="{{inputItem.placeholder}}"
+                    />
+                </view>
+            </view>
+        </view>
+
+        <view class="explain" wx:if="{{item.mold === 'explain'}}">
+            <view class="explain-title">
+                <image class="icon" src="../../assets/images/explain-icon.png"></image>
+                <text>说明</text>
+            </view>
+            <text>{{item.prompt}}</text>
+        </view>
+
+        <view class="checkbox-group" wx:if="{{item.mold === 'checkboxGroup'}}">
+            <view class="checkbox"
+                  bindtap="handleCheck"
+                  data-key="formData.{{key}}"
+                  data-item="{{item}}"
+                  data-checkvalue="{{checkIndex}}"
+                  wx:for="{{item.checkbox}}"
+                  wx:for-index="checkIndex"
+                  wx:for-item="checkItem"
+                  wx:key="{{checkIndex}}">
+                <image class="icon" wx:if="{{filter.filterProductBases(item.value, checkItem.ID) && !(params.disabled || item.disabled)}}" src="../../assets/images/check-active-icon.png"></image>
+                <image class="icon" wx:elif="{{filter.filterProductBases(item.value, checkItem.ID)}}" src="../../assets/images/check-disabled-icon.png"></image>
+                <image class="icon" wx:else src="../../assets/images/check-icon.png"></image>
+                <text>{{checkItem.Name}}</text>
+            </view>
+        </view>
+
+        <view class="input-box {{(params.disabled || item.disabled) && 'disabled'}}" wx:if="{{item.mold === 'input'}}">
+            <input
+                type="text"
+                bindinput="handleInput"
+                data-item="{{item}}"
+                disabled="{{(params.disabled || item.disabled)}}"
+                class="input"
+                value="{{item.value}}"
+                placeholder="{{item.placeholder}}"
+            />
+        </view>
+
+        <view class="upload-group" wx:if="{{item.mold === 'uploadGroup'}}">
+            <view class="upload"
+                  bindtap="handleUpload"
+                  data-key="formData.{{key}}.children.{{ind}}"
+                  data-item="{{item}}"
+                  wx:for="{{item.children}}"
+                  wx:for-index="ind"
+                  wx:for-item="it"
+                  wx:key="{{ind}}">
+                <image class="icon" wx:if="{{!it.value}}" src="../../assets/images/upload-icon.png"></image>
+                <image class="upload-image" wx:else src="{{it.value}}"></image>
+                <text class="upload-text">{{it.label}}</text>
+            </view>
+        </view>
+
+        <view class="optional-group" wx:if="{{item.mold === 'optional-group' && item.status}}">
+            <view class="ul">
+                <view class="li"
+                      wx:for="{{item.children}}"
+                      wx:for-index="optKey"
+                      wx:for-item="optItem"
+                      wx:key="{{optKey}}">
+                    <view class="label">
+                        <text>{{optItem.label}}</text>
+                    </view>
+                    <view class="input {{(params.disabled || item.disabled) && 'disabled'}}">
+                        <input
+                            bindinput="handleInput"
+                            data-item="{{optItem}}"
+                            disabled="{{(params.disabled || item.disabled)}}"
+                            value="{{optItem.value}}"
+                            type="{{optItem.type || 'text'}}"
+                            placeholder="{{params.disabled ? '无' : optItem.placeholder}}"
+                        />
+                    </view>
+                </view>
+            </view>
+            <view class="ul">
+                <view class="li"
+                      wx:for="{{item.children2}}"
+                      wx:for-index="optKey"
+                      wx:for-item="optItem"
+                      wx:key="{{optKey}}">
+                    <view class="label">
+                        <text>{{optItem.label}}</text>
+                    </view>
+                    <view class="input {{(params.disabled || item.disabled) && 'disabled'}}">
+                        <input
+                            bindinput="handleInput"
+                            disabled="{{(params.disabled || item.disabled)}}"
+                            data-item="{{optItem}}"
+                            value="{{optItem.value}}"
+                            type="{{optItem.type || 'text'}}"
+                            placeholder="{{params.disabled ? '无' : optItem.placeholder}}"
+                        />
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="text-area {{params.disabled && 'disabled'}}" wx:if="{{item.mold === 'textarea'}}">
+            <textarea
+                bindinput="handleInput"
+                data-item="{{item}}"
+                disabled="{{params.disabled}}"
+                value="{{item.value}}"
+                placeholder="{{item.placeholder}}"
+            ></textarea>
+        </view>
+    </view>
+
+    <wow-picker-plus
+        wx:if="{{isShowLinkage}}"
+        sourceData="{{sourceData}}"
+        bindcancel="handleLinkageCancel"
+        binderror="handleLinkageError"
+        bindsure="handleLinkageSure"
+    ></wow-picker-plus>
+
+</view>

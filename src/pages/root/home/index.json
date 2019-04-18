@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "panel-logo": "../../../components/panel-logo/index",
+        "panel-root": "../../../components/panel-root/index",
+        "panel-menu": "../../../components/panel-menu/index",
+        "ff-canvas": "../../../components/f2-canvas/index",
+        "panel-user": "../../../components/panel-user/index"
+    }
+}

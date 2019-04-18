@@ -1,0 +1,148 @@
+@import "./../../assets/scss/define";
+
+.table{
+    @extend %df1;
+    @extend %df;
+    @extend %fdc;
+    @extend %h100;
+    @extend %oh;
+    .tr{
+        @extend %df;
+        @extend %aic;
+        border-bottom: j(1) solid #e4e4e4;
+    }
+    .td{
+        @extend %df1;
+        @extend %oh;
+        @extend %fww;
+        font-size: f(26);
+        text{
+            word-break: keep-all;
+            word-wrap: break-word;
+        }
+    }
+}
+.thead{
+    .tr{
+        height: j(90);
+        padding: 0 j(50);
+    }
+    .td{
+        color: #999;
+    }
+}
+.tbody{
+    @extend %df1;
+    @extend %oh;
+    @extend %w100;
+    @extend %h100;
+    @extend %bsb;
+    .tr{
+        padding: j(32) 0;
+        margin: 0 j(50);
+    }
+    .td{
+        color: #333;
+    }
+}
+.table-button-group{
+    @extend %df;
+    @extend %aic;
+}
+.table-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %bsb;
+    width: j(100);
+    height: j(50);
+    font-size: f(28);
+    margin-right: j(20);
+    &.table-button-see,
+    &.table-button-seePatrol,
+    &.table-button-examine{
+        background-color: #11b9ea;
+        color: #fff;
+        &:active{
+            background-color: #1aa2e6;
+        }
+    }
+    &.table-button-update{
+        background-color: #fbaf64;
+        color: #fff;
+        &:active{
+            background-color: #fba051;
+        }
+    }
+    &.table-button-examined,
+    &.table-button-IsDele,
+    &.table-button-remove{
+        border: j(1) solid #999;
+        color: #999;
+        background-color: #fff;
+    }
+    &.table-button-seePatrol-disabled{
+        color: #fff;
+        background-color: #ddd;
+        &:active{
+            background-color: #ddd;
+        }
+    }
+}
+.table-switch{
+    @extend %pr;
+    @extend %bsb;
+    width: j(80);
+    height: j(50);
+    border-radius: j(25);
+    border: j(1) solid #999;
+    background-color: #fff;
+    &:active{
+        .table-switch-inner{
+            background-color: #f2f2f2;
+        }
+    }
+    &.active{
+        background-color: #11b9ea;
+        border: j(1) solid #11b9ea;
+        .table-switch-inner{
+            @extend %r0;
+            left: auto;
+        }
+    }
+}
+.table-switch-inner{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %bsb;
+    right: auto;
+    width: j(48);
+    height: j(48);
+    border-radius: 50%;
+    border: j(1) solid #999;
+    background-color: #fff;
+}
+.table-status-group{
+    @extend %df;
+    @extend %aic;
+}
+.table-status{
+    @extend %df;
+    @extend %aic;
+    font-size: f(26);
+    &.table-status1{
+        color: #666;
+    }
+    &.table-status2{
+        color: #ddd;
+    }
+    &.table-status3{
+        color: #fbaf64;
+    }
+}
+.table-status-icon{
+    width: j(28);
+    height: j(28);
+    margin-right: j(20);
+}

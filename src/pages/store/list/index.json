@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "门店管理",
+    "usingComponents": {
+        "options-section": "../../../components/options-section/index",
+        "table-section": "../../../components/table-section/index"
+    }
+}

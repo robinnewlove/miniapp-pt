@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "",
+    "usingComponents": {
+        "form-section": "../../../components/form-section/index"
+    }
+}

@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="wrap" bindtap="handleCancel">
+    <view
+        catchtap="bindNull"
+        class="inner"
+        indicator-style="height: 50px;"
+        style="width: 100%; height: 300px;">
+        <view class="head">
+            <view class="btn" bindtap="handleCancel"><text>取消</text></view>
+            <view class="btn" bindtap="handleSure"><text>确定</text></view>
+        </view>
+        <picker-view
+            value="{{sourceData.value}}"
+            bindchange="bindChange"
+            class="content">
+            <picker-view-column
+                wx:for="{{sourceData.children}}"
+                wx:for-item="pickerItem"
+                wx:for-index="pickerKey"
+                wx:key="pickerKey">
+                <view
+                    class="item"
+                    wx:for="{{pickerItem.options}}"
+                    wx:key="item">
+                    <text>{{item[pickerItem.rangeKey]}}</text>
+                </view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

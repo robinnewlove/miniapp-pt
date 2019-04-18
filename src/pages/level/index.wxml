@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="wrap">
+    <view class="title">
+        <text>选择级别</text>
+    </view>
+    <view class="select">
+        <view class="select-item"
+              bindtap="handleJump"
+              data-level="region"
+              data-url="region_home_index">
+            <image class="icon" src="../../assets/images/choice-icon.png"></image>
+            <text>进入大区级管理页面</text>
+        </view>
+        <view class="select-item"
+              bindtap="handleJump"
+              data-level="city"
+              data-url="city_home_index">
+            <image class="icon" src="../../assets/images/choice-icon1.png"></image>
+            <text>进入城市级巡店页面</text>
+        </view>
+    </view>
+</view>

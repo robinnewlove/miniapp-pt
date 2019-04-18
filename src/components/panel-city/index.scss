@@ -1,0 +1,23 @@
+@import '../../assets/scss/table';
+
+.tab{
+    @extend %df;
+    @extend %aic;
+}
+.tab-item{
+    @extend %df1;
+    @extend %pr;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    height: j(100);
+    font-size: f(38);
+    color: #7d8a9b;
+    background-color: #eff4fa;
+    box-shadow: 0 0 j(10) j(10) rgba(0,0,0,.01) inset;
+    &.active{
+        z-index: 1;
+        background-color: #fff;
+        box-shadow: none;
+    }
+}

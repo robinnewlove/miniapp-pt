@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="wrap list-page">
+    <options-section
+        wx:if="{{user$.Level === 'root'}}"
+        bindselect="handleSelectChange"
+        bindinput="handleInput"
+        bindclear="handleInputClear"
+        binddown="handleDown"
+        binddate="handleDate"
+        bindreset="handleReset"
+        bindconfirm="handleConfirm"
+        optionsData="{{optionsData}}"
+    ></options-section>
+    <table-section
+        class="main"
+        tableHeadData="{{tableHeadData}}"
+        tableData="{{tableData}}"
+    ></table-section>
+</view>
